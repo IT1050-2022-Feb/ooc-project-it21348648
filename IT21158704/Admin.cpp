@@ -1,57 +1,36 @@
+#include "Admin.h"
 #include <iostream>
+#include <cstring>
 using namespace std;
 
-class Admin{
-  private:
-    string adminName;
-    int ID;
-    string email;
-    int contactNo;
-  public:
-    Admin();
-    void assignDetails(string aName, int aID, string aEmail, int aContactNo);
-    string getAdminName();
-    int getID();
-    string getEmail();
-    int getContactNo();
-};
 
-//Implementing Methods
-
-void Admin::assignDetails(string aName, int aID, string aEmail, int aContactNo){
-  adminName = aName;
+Admin::Admin(char aName[], int aID, char aEmail[], int aContactNo)
+{
+  strcpy(adminName,aName);
   ID = aID;
-  email = aEmail;
+  strcpy(email,aEmail);  
   contactNo = aContactNo;
 }
 
-string Admin::getAdminName(){
-  return adminName;
+char Admin::getAdminName(){
+  return adminName[20];
 }
 
 int Admin::getID(){
   return ID;
 }
 
-string Admin::getEmail(){
-  return email;
+char Admin::getEmail(){
+  return email[20];
 }
 
 int Admin::getContactNo(){
   return contactNo;
 }
 
-int main() {
-
-  Admin admin1;
-
-  admin1.assignDetails( "Admin 1 Name", 001, "@gmail.com", 0752632471);
-
-  cout << "Admin Name :" << admin1.getAdminName() << endl; 
-  cout << "Admin ID :" << admin1.getID() << endl; 
-  cout << "Admin Email :" << admin1.getEmail() << endl; 
-  cout << "Admin Contact :" << admin1.getContactNo() << endl;
-
-  return 0;
-
+void Admin::displayAdminDetails(){
+  cout << "Admin Name : " << adminName << endl;
+  cout << "Admin ID : " << ID << endl;
+  cout << "Admin location : " << email << endl;
+  cout << "Admin contact No : " << contactNo << endl << endl;
 }

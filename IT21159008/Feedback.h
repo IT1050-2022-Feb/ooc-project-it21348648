@@ -8,12 +8,12 @@ char Comments[30];
 
 public:
 
-Feedback(char fType[],char fName[],int fID , char fComments[]);
-void assignDetails(char fType[],char fName[],int fID , char fComments[]); 
+Feedback(char fType[],char fName[],int fID , char fComments[]); 
+void assignDetails(char fType[],char fName[],int fID , char fComments[]);
 char getFeedbackType();
 char getFeedbackName();
 int getID();
 char getComments();
+void displayFeedbackDetails();
 
 };
-

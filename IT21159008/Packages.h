@@ -12,4 +12,6 @@ void assignDetails(char pType[],char pName[],int pID);
 char getPackageType();
 char getPackageName();
 int getID;
+void displayPackagesDetails();
+
 };
